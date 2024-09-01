@@ -6,6 +6,8 @@ import Footer from "./Components/Footer/Footer";
 import Home from "./Components/Home/Home";
 import AppContext from './utils/context';
 import Newsletter from './Components/Footer/Newsletter/Newsletter';
+import Category from './Components/Category/Category';
+import SingleProduct from './Components/SingleProduct/SingleProduct';
 
 const App = () => {
   return (
@@ -14,8 +16,8 @@ const App = () => {
     <Header />
     <Routes>
       <Route path="/" element={<Home />} />
-      {/* <Route path="/category/:id" element={<Category />} />  */}
-      {/* <Route path="/product/:id" element={<SingleProduct />} />  */}
+      <Route path="/category/:id" element={<Category />} />  
+      <Route path="/product/:id" element={<SingleProduct />} /> 
     </Routes>
     <Newsletter />
     <Footer />

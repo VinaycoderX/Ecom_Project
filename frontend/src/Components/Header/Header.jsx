@@ -6,11 +6,12 @@ import { Context } from '../../utils/context';
 import { TbSearch }from "react-icons/tb";
 import { AiOutlineHeart } from "react-icons/ai";
 import { FaCartArrowDown } from "react-icons/fa";
-
+import Cart from '../Cart/Cart';
 
 const Header = () => {
 
     const [scrolled,setScrolled] = useState(false);
+    const [showCart,setShowCart] = useState(false)
     const handleScroll = () => {
         const offset = window.scrollY;
         if (offset > 200){
@@ -24,8 +25,9 @@ const Header = () => {
         window.addEventListener("scroll",handleScroll)
     },[]);
 
-  return (
-    <header className={`main-header ${scrolled ? "sticky-header" : ''}`}>
+  return ( 
+  <>
+   <header className={`main-header ${scrolled ? "sticky-header" : ''}`}>
         <div className="header-content">
             <ul className='left'>
                 <li> <a href="#">Home</a></li>
@@ -37,13 +39,16 @@ const Header = () => {
                 <TbSearch />
                 <AiOutlineHeart />
                 
-                <span className="cart-icon">
+                <span className="cart-icon" onClick={()=> setShowCart(true)}>
                 <FaCartArrowDown />
                 <span>5</span>
                 </span>
             </div>
         </div>
     </header>
+    {showCart && <Cart setShowCart={setShowCart} />}
+  </>
+   
   );
 }
 

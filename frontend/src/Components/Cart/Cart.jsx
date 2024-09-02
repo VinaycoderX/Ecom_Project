@@ -13,7 +13,8 @@ const Cart = ({ setShowCart }) => {
       <div className="cart-content">
         <div className="cart-header">
           <span className="heading">Shopping Cart</span>
-          <span className="close-btn" onClick={() => setShowCart()}>
+          <span className="close-btn" onClick={() => setShowCart(false)}
+            >
             <FaRegWindowClose />
             <span className="text">close</span>
           </span>

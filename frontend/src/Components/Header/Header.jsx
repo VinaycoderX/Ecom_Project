@@ -38,7 +38,7 @@ const Header = () => {
             </ul>
             <div className="center">Nimansu Productions</div>
             <div className="right">
-                <TbSearch onClick={() => setShowSearch(true)} />
+                <TbSearch onClick={() => setShowSearch(true)}/>
                 <AiOutlineHeart />
                 
                 <span className="cart-icon" onClick={()=> setShowCart(true)}>
